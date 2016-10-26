@@ -1,0 +1,41 @@
+/* author: zyx
+this file is for test 
+
+>_<=
+
+
+2016.10.26*/
+
+import calc.avaj;
+
+void main(){
+	scanf("%d");// get an input <
+	printf(calc());
+	
+	int list[6];
+	if(list[0] < 3){
+		if(list[0] >= 4){
+			//do nothing != doing nothing
+		}
+	}
+}
+
+int calc(){
+	int i = 2, j;
+	j = i + 4 * 3;
+
+	//make a judgment
+	if( j <= 2016){
+		printf("Little than 2016!");
+	}else{
+		j = i/2;
+		if(i == 0)
+			break;
+		else if (i != 2016)
+			i = i - 1;
+	}
+	while(j > 0){
+		j = j - 1;
+	}
+	return i;
+}
