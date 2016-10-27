@@ -3,7 +3,7 @@
 import calc;
 
 void main(){
-	!scanf("something");// get an input <
+	scanf("something");// get an input <
 	printf(calc());
 	
 	int list[6];
@@ -11,7 +11,7 @@ void main(){
 		if(list[0] >= 4){
 			//do nothing != doing nothing
 		}
-	::}
+	}
 }
 
 /* hah

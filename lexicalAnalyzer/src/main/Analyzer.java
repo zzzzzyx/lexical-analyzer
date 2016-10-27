@@ -35,12 +35,21 @@ public class Analyzer {
 			
 		}
 		for(int i = 0 ; i < largeStr.length() ; i ++){
-			boolean success = automata.toNextStatus(largeStr.charAt(i));
-			if(success){
-				//如果成功，应该回退一个字符，这个字符被上一个成功所抵消了，并没有经过合理地从头分析
-				i --;
-				//并且进行token输出
-				buildToken(automata.getLastStatus(),automata.getPresentString());
+			boolean success = false;
+			try {
+				success = automata.toNextStatus(largeStr.charAt(i));
+				if(success){
+					//如果成功，应该回退一个字符，这个字符被上一个成功所抵消了，并没有经过合理地从头分析
+					i --;
+					//并且进行token输出
+					buildToken(automata.getLastStatus(),automata.getPresentString());
+				}
+			} catch (Exception e) {
+				int lastLineNum = largeStr.substring(0, i).lastIndexOf('\n') + 1;
+				int lineNum = largeStr.substring(0, i).split("\n").length;
+				i = largeStr.indexOf('\n', i) + 1;//从下一行开始解析
+				System.err.println("\nError! Error occurs in Line " + lineNum
+						+ " ,which is\n" + largeStr.substring(lastLineNum, i));
 			}
 		}
 		

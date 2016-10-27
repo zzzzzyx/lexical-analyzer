@@ -22,7 +22,7 @@ public class Automata {
 	}
 
 	//自动机的每步转化的方法,当返回值为真时，匹配成功，否则匹配失败，匹配失败时应该回退一个字符
-	public boolean toNextStatus(char nextChar){
+	public boolean toNextStatus(char nextChar) throws Exception{
 		if(presentStatus.equals("Start")){
 			presentString.delete(0, presentString.length());			
 		}
@@ -41,15 +41,15 @@ public class Automata {
 			}
 		}
 		if(!hasComparision){
-			if(endStatusList.contains(presentStatus)){
-				lastStatus = presentStatus;
-				presentStatus = "Start";
-				lastChar = nextChar;
+			lastStatus = presentStatus;
+			presentStatus = "Start";
+			lastChar = nextChar;
+			if(endStatusList.contains(lastStatus)){
 				return true;
 			}else{
-				System.out.println("Error! presentStatus is " + presentStatus + " -- presentChar is " + nextChar);
+				//show this line of code is error, it should be handled
+				throw new Exception();
 			}
-			presentStatus = "Start";
 		}
 		presentString.append(nextChar);
 		lastChar = nextChar;
