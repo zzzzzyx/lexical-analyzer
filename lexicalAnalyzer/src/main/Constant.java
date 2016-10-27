@@ -5,23 +5,22 @@ import java.util.HashMap;
 
 public class Constant {
 	
-	public static final ArrayList<String> simpleSignList = new ArrayList<>();
-	static{
-		simpleSignList.add("+");
-		simpleSignList.add("-");
-		simpleSignList.add("*");
-		simpleSignList.add("(");
-		simpleSignList.add(")");
-		simpleSignList.add("[");
-		simpleSignList.add("]");
-		simpleSignList.add("{");
-		simpleSignList.add("}");
-		simpleSignList.add("\"");
-		simpleSignList.add(";");
-		simpleSignList.add("!=");
-		simpleSignList.add(",");
-		
-	}
+//	public static final ArrayList<String> simpleSignList = new ArrayList<>();
+//	static{
+//		simpleSignList.add("+");
+//		simpleSignList.add("-");
+//		simpleSignList.add("*");
+//		simpleSignList.add("(");
+//		simpleSignList.add(")");
+//		simpleSignList.add("[");
+//		simpleSignList.add("]");
+//		simpleSignList.add("{");
+//		simpleSignList.add("}");
+//		simpleSignList.add("\"");
+//		simpleSignList.add(";");
+//		simpleSignList.add(",");
+//		
+//	}
 	
 	public static final ArrayList<String> remainedWordList = new ArrayList<>();
 	static{
@@ -74,9 +73,8 @@ public class Constant {
 	}
 	
 	public static final HashMap<String,String> reExplainer = new HashMap<>();
-	
 	static{
-		reExplainer.put("simpleSign", "\\+|-|\\*|\\(|\\)|,|\\{|\\}|\\[|\\]|!=|;|\"|\\.");
+		reExplainer.put("simpleSign", "\\+|-|\\*|\\(|\\)|,|\\{|\\}|\\[|\\]|;|\"");
 		reExplainer.put("digit", "[0-9]");
 		reExplainer.put("complexSign", "=|==|>|>=|<|<=");
 		reExplainer.put("char", "[a-zA-Z]");

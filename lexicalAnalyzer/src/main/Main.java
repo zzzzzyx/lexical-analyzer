@@ -6,17 +6,18 @@ public class Main {
 
 	public static void main(String[] args) {
 		
+		//delete output file
+		MyFileManager.initFile();
+		
 		//Read from file
-		ArrayList<String> input = MyFileReader.readFile("input.avaj");
+		ArrayList<String> input = MyFileManager.readFile("input.avaj");
 		
 		//read transformations
-		ArrayList<String> translist = MyFileReader.readFile("Description of Automata.txt");
+		ArrayList<String> translist = MyFileManager.readFile("Description of Automata.txt");
 		
 		Analyzer a = new Analyzer(translist);
-		//get Token List
+		//put input into automata
 		a.deal(input);
-		
-		//print Token
 	}
 	
 }

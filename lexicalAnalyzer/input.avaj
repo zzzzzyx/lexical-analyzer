@@ -38,6 +38,3 @@ int calc(){
 	}
 	return i;
 }
-
-
-

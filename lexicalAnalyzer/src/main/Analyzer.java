@@ -48,8 +48,11 @@ public class Analyzer {
 				int lastLineNum = largeStr.substring(0, i).lastIndexOf('\n') + 1;
 				int lineNum = largeStr.substring(0, i).split("\n").length;
 				i = largeStr.indexOf('\n', i) + 1;//从下一行开始解析
-				System.err.println("\nError! Error occurs in Line " + lineNum
-						+ " ,which is\n" + largeStr.substring(lastLineNum, i));
+				
+				String errorMessage = "\nError! Error occurs in Line " + lineNum
+						+ " ,which is\n" + largeStr.substring(lastLineNum, i);
+				System.err.println(errorMessage);
+				MyFileManager.writeToken(">>>>>" + errorMessage);
 			}
 		}
 		
@@ -69,7 +72,9 @@ public class Analyzer {
 			//We willingly ignore comment
 			return;
 		}
-		System.out.println("( " + presentStatus + " , \"" +  presentString + "\" )");
+		String token = "( " + presentStatus + " , \"" +  presentString + "\" )";
+		System.out.println(token);
+		MyFileManager.writeToken(token);
 	}
 	
 	public ArrayList<Transformation> getTransformList() {

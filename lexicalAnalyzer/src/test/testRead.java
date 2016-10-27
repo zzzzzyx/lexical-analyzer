@@ -6,14 +6,14 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import main.Analyzer;
-import main.MyFileReader;
+import main.MyFileManager;
 import main.Transformation;
 
 public class testRead {
 
 	@Test
 	public void testReadInput() {
-		ArrayList<String> input = MyFileReader.readFile("input.avaj");
+		ArrayList<String> input = MyFileManager.readFile("input.avaj");
 		for (String str : input) {
 			System.out.println(str);
 		}
@@ -23,7 +23,7 @@ public class testRead {
 	public void testReadTransTable() {
 
 		// read transformations
-		ArrayList<String> translist = MyFileReader.readFile("Description of Automata.txt");
+		ArrayList<String> translist = MyFileManager.readFile("Description of Automata.txt");
 
 		Analyzer a = new Analyzer(translist);
 		ArrayList<Transformation> t = a.getTransformList();
@@ -39,10 +39,10 @@ public class testRead {
 
 	@Test
 	private void testAutomata() {
-		ArrayList<String> input = MyFileReader.readFile("input.avaj");
+		ArrayList<String> input = MyFileManager.readFile("input.avaj");
 
 		// read transformations
-		ArrayList<String> translist = MyFileReader.readFile("Description of Automata.txt");
+		ArrayList<String> translist = MyFileManager.readFile("Description of Automata.txt");
 
 		Analyzer a = new Analyzer(translist);
 		// get Token List
