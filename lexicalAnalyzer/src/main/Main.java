@@ -8,11 +8,11 @@ public class Main {
 		
 		//Read from file
 		ArrayList<String> input = MyFileReader.readFile("input.avaj");
-		for(String str : input){
-			System.out.println(str);
-		}
 		
-		Analyzer a = new Analyzer();
+		//read transformations
+		ArrayList<String> translist = MyFileReader.readFile("Description of Automata.txt");
+		
+		Analyzer a = new Analyzer(translist);
 		//get Token List
 		a.deal(input);
 		

@@ -1,18 +1,21 @@
+Start \s Start
+Start ! NeqMiddle
 Start simpleSign SimpleSuccess
 Start digit Num
 Start complexSign Middle
-Start char Id
+Start char ID
 Start / Div
+NeqMiddle = NeqSuccess
 Num digit Num
 ID digit ID
 ID char ID
 Div / LineComment
 LineComment [^\n] LineComment
-LineComment \n Comment
 Div \* BlockComment1
-BlockComment1 [^\*^\/] BlockComment1
-BlockComment1 * BlockComment2
-BlockComment2 * BlockComment2
-BlockComment2 [^\*] BlockComment1
+BlockComment1 [^\*] BlockComment1
+BlockComment1 \* BlockComment2
+BlockComment2 \* BlockComment2
+BlockComment2 [^\*^/] BlockComment1
 BlockComment2 / Comment
 Middle = MiddleSuccess
+final Num SimpleSuccess Div ID Comment Middle MiddleSuccess NeqSuccess LineComment

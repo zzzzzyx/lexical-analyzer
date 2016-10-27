@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class MyFileReader {
 
-	static ArrayList<String> readFile(String fileName){
+	public static ArrayList<String> readFile(String fileName){
 		ArrayList<String> list = new ArrayList<>();
 		File file = new File(fileName);
         BufferedReader reader = null;

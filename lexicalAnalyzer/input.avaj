@@ -1,15 +1,9 @@
-/* author: zyx
-this file is for test 
+/* au6*/
 
->_<=
-
-
-2016.10.26*/
-
-import calc.avaj;
+import calc;
 
 void main(){
-	scanf("%d");// get an input <
+	!scanf("something");// get an input <
 	printf(calc());
 	
 	int list[6];
@@ -17,8 +11,13 @@ void main(){
 		if(list[0] >= 4){
 			//do nothing != doing nothing
 		}
-	}
+	::}
 }
+
+/* hah
+test !
+int i = 6;
+*/
 
 int calc(){
 	int i = 2, j;
@@ -26,8 +25,8 @@ int calc(){
 
 	//make a judgment
 	if( j <= 2016){
-		printf("Little than 2016!");
-	}else{
+		printf("Little than 2016");
+	}else if( j == 6){
 		j = i/2;
 		if(i == 0)
 			break;
@@ -39,3 +38,6 @@ int calc(){
 	}
 	return i;
 }
+
+
+
